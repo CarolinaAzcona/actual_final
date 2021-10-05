@@ -1,0 +1,7 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:aws_demos Attach (KitProg3),org.eclipse.launchbar.core.descriptorType.default\:aws_demos Debug (KitProg3),org.eclipse.launchbar.core.descriptorType.default\:aws_demos Erase (KitProg3),org.eclipse.launchbar.core.descriptorType.default\:aws_demos Program (KitProg3)
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:aws_demos\ Attach\ (KitProg3)/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:aws_demos\ Attach\ (KitProg3)/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
