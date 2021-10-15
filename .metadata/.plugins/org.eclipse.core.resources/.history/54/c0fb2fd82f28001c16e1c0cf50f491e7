@@ -1,0 +1,70 @@
+
+
+#include "sensore2.h"
+#include "cy_pdl.h"
+#include "cybsp.h"
+#include "cyhal.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "cy_retarget_io.h"
+#include "cycfg.h"
+#include "timers.h"
+#include <stdio.h>
+#include <stdlib.h>
+/***************************************
+*            Constants
+****************************************/
+#define CMD_TO_CMD_DELAY        (1000UL)
+#define PACKET_SOP_POS          (0UL)
+#define PACKET_CMD_POS          (1UL)
+#define PACKET_STS_POS          (1UL)
+
+/* Start and end of packet markers */
+#define PACKET_EOP_POS          (2UL)
+#define PACKET_SOP              (0x01UL)
+#define PACKET_EOP              (0x17UL)
+
+/* I2C slave address to communicate with */
+#define I2C_SLAVE_ADDR          (0x77)
+
+/* I2C bus frequency */
+#define I2C_FREQ                (400000UL)
+
+/* I2C slave interrupt priority */
+#define I2C_SLAVE_IRQ_PRIORITY  (7u)
+
+/* Command valid status */
+#define STS_CMD_DONE            (0x00UL)
+#define STS_CMD_FAIL            (0xFFUL)
+
+/* Buffer and packet size */
+#define PACKET_SIZE             (3UL)
+
+QueueHandle_t xQueue;
+static void vReceiverTask(void *pvParameters)
+{
+	int32_t 1ReceivedValue;
+	BaseType_t xStatus;
+	const TickType_t xTicksToWait = pdms_TO_TICKS(100);
+
+    for(;;)
+    {
+    	if(uxQueueMessagesWaiting(xQueue)!=0)
+    	{
+    		vPrintString("Queue should have been empty!\r\n");
+
+    	}
+
+//    	if(xStatus==pdPass)
+//    	{
+
+    		vPrintStringAndNumber("Received="), 1ReceivedValue);
+//        }
+//
+//        else
+//		{
+//		vPrintString("Could not receive from the queue.\r\n");
+    }
+
+}

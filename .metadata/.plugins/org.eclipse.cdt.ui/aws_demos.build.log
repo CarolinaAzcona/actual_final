@@ -1,4 +1,4 @@
-10:02:45 **** Incremental Build of configuration Debug for project aws_demos ****
+15:23:16 **** Incremental Build of configuration Debug for project aws_demos ****
 "C:\\Users\\AzconaGarcia\\ModusToolbox\\tools_2.3\\modus-shell\\bin\\make" CY_MAKE_IDE=eclipse CY_IDE_TOOLS_DIR=C:/Users/AzconaGarcia/ModusToolbox/tools_2.3 CY_IDE_BT_TOOLS_DIR= -j8 all 
 Tools Directory: C:/Users/AzconaGarcia/ModusToolbox/tools_2.3
 CY8CKIT_064S0S2_4343W.mk: ../../../../../vendors/cypress/boards/CY8CKIT_064S0S2_4343W/aws_demos/application_code/cy_code/CY8CKIT_064S0S2_4343W.mk
@@ -33,20 +33,20 @@ Build rules construction complete
 Generating compilation database file...
 -> C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/compile_commands.json
 Compilation database file generation complete
-Building 486 file(s)
+Building 489 file(s)
 C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-objcopy -R .cy_sflash_user_data -R .cy_toc_part2 C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/aws_demos.elf C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.elf; C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-objcopy -O ihex C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.elf C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex; cp "../../../../../vendors/cypress/MTB/psoc6/psoc64tfm/COMPONENT_TFM_S_FW/tfm_s_unsigned.hex" "C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex"; cysecuretools --policy "../../../../../vendors/cypress/MTB/psoc6/psoc64tfm/security/policy/policy_multi_CM0_CM4_jitp.json" --target "cy8ckit-064s0s2-4343w" sign-image --hex "C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex" --image-type UPGRADE --image-id 1; cysecuretools --policy "../../../../../vendors/cypress/MTB/psoc6/psoc64tfm/security/policy/policy_multi_CM0_CM4_jitp.json" --target "cy8ckit-064s0s2-4343w" sign-image --hex "C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex" --image-type UPGRADE --image-id 16; cp "C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0_unsigned.hex"  "C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex"; cp "C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4_unsigned.hex"  "C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex"; cysecuretools --policy "../../../../../vendors/cypress/MTB/psoc6/psoc64tfm/security/policy/policy_multi_CM0_CM4_jitp.json" --target "cy8ckit-064s0s2-4343w" sign-image --hex "C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex" --image-type BOOT --image-id 1; cysecuretools --policy "../../../../../vendors/cypress/MTB/psoc6/psoc64tfm/security/policy/policy_multi_CM0_CM4_jitp.json" --target "cy8ckit-064s0s2-4343w" sign-image --hex "C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex" --image-type BOOT --image-id 16;
-2021-10-05 10:02:54,505 : C : WARN  : There is gap between regions 269926400:270254080 and 270303232:270336000 (49152 bytes)
-2021-10-05 10:02:54,505 : C : WARN  : Policy validation finished with warnings
-2021-10-05 10:02:54,941 : C : INFO  : Image for slot UPGRADE signed successfully! (C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0_upgrade.hex)
-2021-10-05 10:02:56,398 : C : WARN  : There is gap between regions 269926400:270254080 and 270303232:270336000 (49152 bytes)
-2021-10-05 10:02:56,398 : C : WARN  : Policy validation finished with warnings
-2021-10-05 10:02:58,166 : C : INFO  : Image for slot UPGRADE signed successfully! (C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4_upgrade.hex)
-2021-10-05 10:03:00,687 : C : WARN  : There is gap between regions 269926400:270254080 and 270303232:270336000 (49152 bytes)
-2021-10-05 10:03:00,687 : C : WARN  : Policy validation finished with warnings
-2021-10-05 10:03:00,981 : C : INFO  : Image for slot BOOT signed successfully! (C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex)
-2021-10-05 10:03:02,026 : C : WARN  : There is gap between regions 269926400:270254080 and 270303232:270336000 (49152 bytes)
-2021-10-05 10:03:02,026 : C : WARN  : Policy validation finished with warnings
-2021-10-05 10:03:03,148 : C : INFO  : Image for slot BOOT signed successfully! (C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex)
+2021-10-15 15:23:26,432 : C : WARN  : There is gap between regions 269926400:270254080 and 270303232:270336000 (49152 bytes)
+2021-10-15 15:23:26,432 : C : WARN  : Policy validation finished with warnings
+2021-10-15 15:23:26,841 : C : INFO  : Image for slot UPGRADE signed successfully! (C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0_upgrade.hex)
+2021-10-15 15:23:29,191 : C : WARN  : There is gap between regions 269926400:270254080 and 270303232:270336000 (49152 bytes)
+2021-10-15 15:23:29,191 : C : WARN  : Policy validation finished with warnings
+2021-10-15 15:23:31,137 : C : INFO  : Image for slot UPGRADE signed successfully! (C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4_upgrade.hex)
+2021-10-15 15:23:34,658 : C : WARN  : There is gap between regions 269926400:270254080 and 270303232:270336000 (49152 bytes)
+2021-10-15 15:23:34,658 : C : WARN  : Policy validation finished with warnings
+2021-10-15 15:23:34,959 : C : INFO  : Image for slot BOOT signed successfully! (C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex)
+2021-10-15 15:23:36,046 : C : WARN  : There is gap between regions 269926400:270254080 and 270303232:270336000 (49152 bytes)
+2021-10-15 15:23:36,046 : C : WARN  : Policy validation finished with warnings
+2021-10-15 15:23:37,632 : C : INFO  : Image for slot BOOT signed successfully! (C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex)
 ==============================================================================
 = Build complete =
 ==============================================================================
@@ -56,10 +56,10 @@ Calculating memory consumption: CYB0644ABZI-S2D44 GCC_ARM -Og
    ---------------------------------------------------- 
   | Section Name         |  Address      |  Size       | 
    ---------------------------------------------------- 
-  | .text                |  0x10050400   |  825712     | 
-  | .ARM.exidx           |  0x10119d70   |  8          | 
-  | .copy.table          |  0x10119d78   |  24         | 
-  | .zero.table          |  0x10119d90   |  8          | 
+  | .text                |  0x10050400   |  831880     | 
+  | .ARM.exidx           |  0x1011b588   |  8          | 
+  | .copy.table          |  0x1011b590   |  24         | 
+  | .zero.table          |  0x1011b5a8   |  8          | 
   | .data                |  0x080302e0   |  2328       | 
   | .cy_sharedmem        |  0x08030bf8   |  8          | 
   | tasks_share          |  0x08030c00   |  32         | 
@@ -69,12 +69,12 @@ Calculating memory consumption: CYB0644ABZI-S2D44 GCC_ARM -Og
    ---------------------------------------------------- 
 
   Total Internal Flash (Available)          1899520    
-  Total Internal Flash (Utilized)           829152     
+  Total Internal Flash (Utilized)           835320     
 
   Total Internal SRAM (Available)           1046528    
   Total Internal SRAM (Utilized with heap)  744736     
 
   
 
-10:03:03 Build Finished. 0 errors, 0 warnings. (took 17s.807ms)
+15:23:38 Build Finished. 0 errors, 0 warnings. (took 22s.483ms)
 

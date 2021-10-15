@@ -5,3 +5,5 @@ configDescList=org.eclipse.launchbar.core.descriptorType.default\:aws_demos Atta
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:aws_demos\ Attach\ (KitProg3)/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:aws_demos\ Attach\ (KitProg3)/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:aws_demos\ Debug\ (KitProg3)/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:aws_demos\ Program\ (KitProg3)/activeLaunchMode=run
