@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 6 resources" deleteContents="false" description="Delete 6 resources" element1="/aws_demos/vendors/cypress/boards/CY8CKIT_064S0S2_4343W/aws_demos/application_code/last_sensore.c" element2="/aws_demos/vendors/cypress/boards/CY8CKIT_064S0S2_4343W/aws_demos/application_code/last_sensore.h" element3="/aws_demos/vendors/cypress/boards/CY8CKIT_064S0S2_4343W/aws_demos/application_code/receiver_task.c" element4="/aws_demos/vendors/cypress/boards/CY8CKIT_064S0S2_4343W/aws_demos/application_code/receiver_task.h" element5="/aws_demos/vendors/cypress/boards/CY8CKIT_064S0S2_4343W/aws_demos/application_code/sender_task.c" element6="/aws_demos/vendors/cypress/boards/CY8CKIT_064S0S2_4343W/aws_demos/application_code/sender_task.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="6" stamp="1635260674563"/>
+</session>

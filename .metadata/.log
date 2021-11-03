@@ -2287,3 +2287,1531 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-25 16:57:34.477
 !MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+!SESSION 2021-10-26 11:28:25.341 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.mylyn.commons.notifications.feed 4 0 2021-10-26 11:28:28.454
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.commons.notifications.feed [271]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2021-10-26 11:28:28.459
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.ui [288]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+       org.eclipse.mylyn.commons.notifications.feed [271]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.wikitext.tasks.ui 4 0 2021-10-26 11:28:28.461
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.wikitext.tasks.ui [303]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="3.7.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.2.v20200814-0512"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [288]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [271]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.ui 4 4 2021-10-26 11:28:40.392
+!MESSAGE Unable to create part
+!STACK 1
+org.eclipse.ui.PartInitException: Cannot determine URI for '/aws_demos/freertos_kernel/tasks.c'.
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3203)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3214)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:353)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:340)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:999)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:964)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:405)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:332)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1209)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:114)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:148)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:148)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:148)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:114)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:148)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:667)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1083)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:153)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+Caused by: org.eclipse.core.runtime.CoreException: Cannot determine URI for '/aws_demos/freertos_kernel/tasks.c'.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:239)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:115)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:563)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.createFileInfo(CDocumentProvider.java:792)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:481)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.connect(CDocumentProvider.java:724)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4182)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:262)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1479)
+	at org.eclipse.ui.editors.text.TextEditor.doSetInput(TextEditor.java:153)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.internalDoSetInput(CEditor.java:1445)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.doSetInput(CEditor.java:1409)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$1(AbstractTextEditor.java:3172)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2298)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3189)
+	... 124 more
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2021-10-26 11:28:40.393
+!MESSAGE Cannot determine URI for '/aws_demos/freertos_kernel/tasks.c'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Cannot determine URI for '/aws_demos/freertos_kernel/tasks.c'.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:239)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:115)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:563)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.createFileInfo(CDocumentProvider.java:792)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:481)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.connect(CDocumentProvider.java:724)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4182)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:262)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1479)
+	at org.eclipse.ui.editors.text.TextEditor.doSetInput(TextEditor.java:153)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.internalDoSetInput(CEditor.java:1445)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.doSetInput(CEditor.java:1409)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.lambda$1(AbstractTextEditor.java:3172)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2298)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3189)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3214)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:353)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:340)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:999)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:964)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:140)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:405)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:332)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:202)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:91)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:132)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1209)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:114)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:544)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:528)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:73)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:999)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:659)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:148)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:148)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:148)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveRenderer.processContents(PerspectiveRenderer.java:51)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.showTab(PerspectiveStackRenderer.java:82)
+	at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer.postProcess(LazyStackRenderer.java:114)
+	at org.eclipse.e4.ui.workbench.renderers.swt.PerspectiveStackRenderer.postProcess(PerspectiveStackRenderer.java:64)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:677)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SashRenderer.processContents(SashRenderer.java:148)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:71)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:667)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:673)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:765)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:736)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:730)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:714)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1083)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:153)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2021-10-26 11:28:40.394
+!MESSAGE Cannot determine URI for '/aws_demos/freertos_kernel/tasks.c'.
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-10-26 11:28:42.287
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\AzconaGarcia'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-26 11:33:45.242
+!MESSAGE Indexed 'aws_demos' (727 sources, 1,543 headers) in 49.4 sec: 185,851 declarations; 446,059 references; 1,406 unresolved inclusions; 7,891 syntax errors; 73,435 unresolved names (10%)
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 11:34:44.861
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 11:34:45.077
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 5012 2021-10-26 11:34:51.662
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:448)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+java.lang.Exception: localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10004 2021-10-26 11:34:51.663
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+!SUBENTRY 2 org.eclipse.cdt.dsf.gdb 4 10004 2021-10-26 11:34:51.663
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+!STACK 0
+java.lang.Exception: localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 11:35:14.726
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 11:35:14.925
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 5012 2021-10-26 11:35:20.256
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:448)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+java.lang.Exception: localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10004 2021-10-26 11:35:20.256
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+!SUBENTRY 2 org.eclipse.cdt.dsf.gdb 4 10004 2021-10-26 11:35:20.256
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+!STACK 0
+java.lang.Exception: localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 11:35:47.250
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 12:42:32.081
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 12:42:32.308
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 12:43:00.903
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 12:43:32.117
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2021-10-26 13:08:23.936
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.checkBinaryDetails(LaunchConfigurationDelegate.java:500)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:223)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2021-10-26 13:08:23.936
+!MESSAGE C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.checkBinaryDetails(LaunchConfigurationDelegate.java:500)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:223)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2021-10-26 13:08:51.786
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.checkBinaryDetails(LaunchConfigurationDelegate.java:500)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:223)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2021-10-26 13:08:51.786
+!MESSAGE C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.checkBinaryDetails(LaunchConfigurationDelegate.java:500)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:223)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 13:16:45.626
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 13:16:45.845
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 13:17:26.581
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 13:18:01.413
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 15:38:52.934
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 15:38:53.226
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag 4 0 2021-10-26 15:39:04.980
+!MESSAGE Debug session 'aws_demos Debug (KitProg3)' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 15:39:09.822
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 15:39:10.038
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag 4 0 2021-10-26 15:39:22.637
+!MESSAGE Debug session 'aws_demos Program (KitProg3)' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 15:39:42.356
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 15:41:01.849
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:22:31.578
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:22:31.788
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:23:01.025
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:23:30.723
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:27:42.542
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:27:42.741
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:28:19.701
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:28:48.451
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:39:27.192
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:39:27.400
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:39:55.522
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:40:32.272
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:49:03.231
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:49:03.431
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 16:49:56.192
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:00:30.246
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:00:30.408
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:01:17.622
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:37:07.818
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:37:58.709
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:43:04.781
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:43:04.937
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:43:44.598
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:44:40.058
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:44:40.222
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-26 17:45:14.130
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+!SESSION 2021-10-29 09:58:17.386 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.mylyn.commons.notifications.feed 4 0 2021-10-29 09:58:19.775
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.commons.notifications.feed [271]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2021-10-29 09:58:19.780
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.ui [288]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+       org.eclipse.mylyn.commons.notifications.feed [271]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.wikitext.tasks.ui 4 0 2021-10-29 09:58:19.786
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.wikitext.tasks.ui [303]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="3.7.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.2.v20200814-0512"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [288]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [271]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-10-29 09:58:43.870
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\AzconaGarcia'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2021-10-29 10:43:23.786
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.checkBinaryDetails(LaunchConfigurationDelegate.java:500)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:223)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2021-10-29 10:43:23.786
+!MESSAGE C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.checkBinaryDetails(LaunchConfigurationDelegate.java:500)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:223)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 11:01:48.438
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 11:01:50.983
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 5012 2021-10-29 11:01:56.209
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:448)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+java.lang.Exception: localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10004 2021-10-29 11:01:56.210
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+!SUBENTRY 2 org.eclipse.cdt.dsf.gdb 4 10004 2021-10-29 11:01:56.210
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+!STACK 0
+java.lang.Exception: localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 11:02:47.002
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 11:03:59.624
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:05:27.822
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:05:28.058
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:05:58.392
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:06:29.496
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:16:01.005
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:16:01.212
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:16:29.394
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:17:02.402
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:23:56.228
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:38:49.947
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:39:41.262
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 13:40:26.333
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2021-10-29 13:52:08.272
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.checkBinaryDetails(LaunchConfigurationDelegate.java:500)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:223)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2021-10-29 13:52:08.272
+!MESSAGE C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\AzconaGarcia\actual\FreeRTOS\FreeRTOS\build\cy\aws_demos\CY8CKIT_064S0S2_4343W\Debug\aws_demos.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.checkBinaryDetails(LaunchConfigurationDelegate.java:500)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:223)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:10:52.118
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:10:52.304
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:11:27.221
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:12:26.716
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:13:11.750
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:19:41.559
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:19:41.758
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:20:33.920
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:21:08.335
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:37:57.726
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:37:57.928
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:38:24.712
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag 4 0 2021-10-29 14:38:39.275
+!MESSAGE Debug session 'aws_demos Program (KitProg3)' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:38:56.536
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:45:31.797
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:45:32.015
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:46:01.024
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:46:34.791
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:50:51.883
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:50:52.052
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:51:23.762
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:51:52.306
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:56:51.292
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:56:51.450
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 14:57:26.721
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:03:22.427
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:07:25.321
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:07:25.487
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:07:53.896
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:08:22.349
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:10:49.873
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:10:50.084
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2021-10-29 15:11:17.345
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.actions.DsfSuspendCommand$4$1@ed23476): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Interrupt failed. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2021-10-29 15:11:17.345
+!MESSAGE Interrupt failed.
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:30:19.391
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:30:19.620
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:30:58.290
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:33:53.504
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:33:53.718
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:34:34.786
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:35:24.499
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:38:10.411
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:38:10.640
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:39:02.353
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:48:40.897
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:48:41.110
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag 4 0 2021-10-29 15:49:22.436
+!MESSAGE Debug session 'aws_demos Program (KitProg3)' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:49:23.410
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:54:09.874
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:54:10.090
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:54:43.944
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:58:42.276
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:58:42.562
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 15:59:25.299
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:02:01.748
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:02:01.926
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:02:56.994
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:08:28.412
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:08:28.593
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag 4 0 2021-10-29 16:09:03.798
+!MESSAGE Debug session 'aws_demos Debug (KitProg3)' already started. Terminate the first one before restarting.
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:09:43.416
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:14:26.330
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:14:26.504
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:15:01.180
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:18:43.095
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:18:43.268
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:19:34.446
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:23:04.501
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:23:04.691
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-10-29 16:23:53.692
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+!SESSION 2021-11-02 11:29:59.188 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.mylyn.commons.notifications.feed 4 0 2021-11-02 11:30:00.062
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.commons.notifications.feed [271]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2021-11-02 11:30:00.066
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.ui [288]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+       org.eclipse.mylyn.commons.notifications.feed [271]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.wikitext.tasks.ui 4 0 2021-11-02 11:30:00.070
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.wikitext.tasks.ui [303]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="3.7.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.2.v20200814-0512"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [288]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [271]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-11-02 11:30:17.381
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\AzconaGarcia'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:28:48.318
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:28:51.369
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:30:23.126
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:30:23.291
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:30:57.196
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:31:28.815
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:40:54.619
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:40:54.794
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:41:40.971
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 13:42:35.227
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 16:21:08.654
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 16:21:08.847
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 5012 2021-11-02 16:21:13.884
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugSession(LaunchConfigurationDelegate.java:448)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launchDebugger(LaunchConfigurationDelegate.java:174)
+	at ilg.gnumcueclipse.debug.gdbjtag.openocd.dsf.LaunchConfigurationDelegate.launch(LaunchConfigurationDelegate.java:150)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:807)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:718)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+java.lang.Exception: localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 10004 2021-11-02 16:21:13.888
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+!SUBENTRY 2 org.eclipse.cdt.dsf.gdb 4 10004 2021-11-02 16:21:13.888
+!MESSAGE Failed to execute MI command:
+-target-select remote localhost:3333
+Error message from debugger back end:
+localhost:3333: No connection could be made because the target machine actively refused it.
+!STACK 0
+java.lang.Exception: localhost:3333: No connection could be made because the target machine actively refused it.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:993)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:822)
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 16:22:21.707
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -c source [find interface/kitprog3.cfg] -c set TARGET_AP cm4_ap -c puts stderr {Started by GNU MCU Eclipse} -c source [find target/psoc6_2m_secure.cfg] -c psoc64.cpu.cm4 configure -rtos auto -rtos-wipe-on-reset-halt 1 -c psoc6 sflash_restrictions 1 -c init; reset -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 16:22:21.868
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/gcc/bin/arm-none-eabi-gdb --interpreter=mi2 --nx
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 16:22:56.080
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 16:23:29.859
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+
+!ENTRY ilg.gnumcueclipse.debug.gdbjtag.openocd 4 1 2021-11-02 16:27:50.390
+!MESSAGE C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/openocd.exe -c gdb_port 3333 -c telnet_port 4444 -c tcl_port 6666 -s C:/Users/AzconaGarcia/ModusToolbox/tools_2.3/openocd/bin/../scripts -f interface/kitprog3.cfg -c set ENABLE_ACQUIRE 0; set TARGET_AP cm0_ap -f target/psoc6_2m_secure.cfg -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm0.hex} ] { echo {** CM0 Program operation failed **} } else { echo {** CM0 Program operation completed successfully **} } -c if [catch {program C:/Users/AzconaGarcia/actual/FreeRTOS/FreeRTOS/projects/cypress/CY8CKIT_064S0S2_4343W/mtb/aws_demos/../../../../../build/cy/aws_demos/CY8CKIT_064S0S2_4343W/Debug/cm4.hex} ] { echo {** CM4 Program operation failed **} } else { echo {** CM4 Program operation completed successfully **} } -c resume; reset; exit -c echo "Started by GNU MCU Eclipse"
+!SESSION 2021-11-03 10:07:06.161 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.mylyn.commons.notifications.feed 4 0 2021-11-03 10:07:07.197
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.commons.notifications.feed [271]
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2021-11-03 10:07:07.201
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.ui [288]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+       org.eclipse.mylyn.commons.notifications.feed [271]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.mylyn.wikitext.tasks.ui 4 0 2021-11-03 10:07:07.204
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.wikitext.tasks.ui [303]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="3.7.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.25.2.v20200814-0512"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [288]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.0.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.commons.notifications.feed; bundle-version="1.17.2.v20200813-0821"; singleton:="true"
+              org.eclipse.mylyn.commons.notifications.feed [271]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"] and jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle: javax.xml.bind
+  javax.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.2.0.v201105210648"; osgi.identity="javax.xml.bind"]
+
+Chain 2:
+  org.eclipse.mylyn.commons.notifications.feed [osgi.identity; type="osgi.bundle"; version:Version="1.17.2.v20200813-0821"; osgi.identity="org.eclipse.mylyn.commons.notifications.feed"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.xml.bind)(bundle-version>=2.2.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.3.3.v20201118-1818"; osgi.wiring.bundle="com.sun.xml.bind"
+  com.sun.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="com.sun.xml.bind"]
+    import: (&(osgi.wiring.package=javax.xml.bind)(&(version>=2.3.3)(!(version>=2.3.4))))
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  jakarta.xml.bind [osgi.identity; type="osgi.bundle"; version:Version="2.3.3.v20201118-1818"; osgi.identity="jakarta.xml.bind"]
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-11-03 10:07:51.344
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\AzconaGarcia'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
